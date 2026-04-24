@@ -3,7 +3,7 @@
 // Choose your pins
 #define POWER_PIN    13   // This pin will act as your "VCC"
 #define DATA_PIN     12  // This pin sends the color data
-#define NUMPIXELS    1   
+#define NUMPIXELS    2   
 
 Adafruit_NeoPixel pixels(NUMPIXELS, DATA_PIN, NEO_GRB + NEO_KHZ800);
 
@@ -19,8 +19,10 @@ void setup() {
 }
 
 void loop() {
-  // Set to Green
+  // Set to Red
   pixels.setPixelColor(0, pixels.Color(150, 0, 0));
+  // Set to Blue
+  pixels.setPixelColor(1, pixels.Color(0, 0, 150));
   pixels.show();
   
   delay(1000); 
